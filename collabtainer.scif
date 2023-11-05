@@ -21,6 +21,14 @@ micromamba -y env create -f environment.yml
 export PYTHON="micromamba run --name py_data_viz python"
 
 %apprun py_data_viz
-CMD="$PYTHON $@"
+CMD="$PYTHON lib/show_altair.py"
+echo running $CMD
+exec $CMD
+
+%appinstall r_epinow2
+Rscript install_packages.R
+
+%apprun r_epinow2
+CMD="Rscript lib/show_packages.R"
 echo running $CMD
 exec $CMD

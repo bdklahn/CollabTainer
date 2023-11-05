@@ -61,6 +61,7 @@ Get a list of the apps:
 ./CollabTainer.sif apps
 py_data_viz
 julia_data
+ r_epinow2
      julia
 ```
 
@@ -93,11 +94,17 @@ names(Arrow) = [:Arrow, :ArrowTypes]
 
 . . . and . . .
 ```bash
-> cat test.py 
-import altair
-print(f"module location: {altair.__file__}")
-> ./CollabTainer.sif run py_data_viz $PWD/test.py
-[py_data_viz] executing /bin/bash /scif/apps/py_data_viz/scif/runscript /home/brian/git_repos/CollabTainer/test.py
-running micromamba run --name py_data_viz python /home/brian/git_repos/CollabTainer/test.py
+> ./CollabTainer.sif run py_data_viz
+[py_data_viz] executing /bin/bash /scif/apps/py_data_viz/scif/runscript
+running micromamba run --name py_data_viz python lib/show_altair.py
 module location: /opt/conda/envs/py_data_viz/lib/python3.11/site-packages/altair/__init__.py
+```
+
+. . . finally . . .
+```bash
+> ./CollabTainer.sif run r_epinow2 | head -n 2
+[r_epinow2] executing /bin/bash /scif/apps/r_epinow2/scif/runscript
+running Rscript lib/show_packages.R
+> ./CollabTainer.sif run r_epinow2 | grep EpiNow2 | grep site-library
+EpiNow2        "EpiNow2"        "/usr/local/lib/R/site-library" "1.4.0"
 ```
