@@ -59,13 +59,14 @@ actions:
 Get a list of the apps:
 ```bash
 ./CollabTainer.sif apps
+py_data_viz
 julia_data
      julia
 ```
 
 Run one of the apps:
 ```bash
-./CollabTainer.sif run julia
+> ./CollabTainer.sif run julia
 [julia] executing /bin/bash /scif/apps/julia/scif/runscript
 Julia Version 1.9.3
 Commit bed2cd540a1 (2023-08-24 14:43 UTC)
@@ -83,9 +84,20 @@ Environment:
   LD_LIBRARY_PATH = /scif/apps/julia/lib:/.singularity.d/libs
 ```
 
-. . . and another:
+. . . and . . .
 ```bash
-./CollabTainer.sif run julia_data
+> ./CollabTainer.sif run julia_data
 [julia_data] executing /bin/bash /scif/apps/julia_data/scif/runscript
 names(Arrow) = [:Arrow, :ArrowTypes]
+```
+
+. . . and . . .
+```bash
+> cat test.py 
+import altair
+print(f"module location: {altair.__file__}")
+> ./CollabTainer.sif run py_data_viz $PWD/test.py
+[py_data_viz] executing /bin/bash /scif/apps/py_data_viz/scif/runscript /home/brian/git_repos/CollabTainer/test.py
+running micromamba run --name py_data_viz python /home/brian/git_repos/CollabTainer/test.py
+module location: /opt/conda/envs/py_data_viz/lib/python3.11/site-packages/altair/__init__.py
 ```
