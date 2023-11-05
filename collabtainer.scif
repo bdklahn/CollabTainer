@@ -1,2 +1,15 @@
-%appfiles julia_data
-/scif_files/julia_data/Project.toml
+%appenv julia
+export JULIA="julia --startup-file=no --project=@."
+
+%apprun julia
+$JULIA --eval "using InteractiveUtils; versioninfo()"
+
+%appinstall julia_data
+. $SCIF_APPENV_julia
+$JULIA --eval "using Pkg; Pkg.instantiate()"
+
+%appenv julia_data
+. $SCIF_APPENV_julia
+
+%apprun julia_data
+$JULIA --eval "using Arrow; @show names(Arrow)"
