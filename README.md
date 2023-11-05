@@ -21,7 +21,7 @@ app config files, like Conda `enviroment.yml` files or Julia `Project.toml` file
 to pull in as many things via reliable reference. E.g. (shallow) clone a Github repo into an app's
 lib directory, via `%appinstall` sections in the recipe file.
 
-## Quickstart
+## Explore the apps Interface
 The scif tool is used as the entrypoint to interface with the container apps. You can take a look
 at what is available by just calling `--help` on at built container.
 E.g,
