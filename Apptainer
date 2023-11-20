@@ -19,7 +19,7 @@ echo $GITHUB_TOKEN > $SECRETS_DIR/github_token )
 
 
 %files
-collabtainer.scif
+recipe.scif
 scif
 
 
@@ -32,8 +32,8 @@ export JULIA_SCRATCH_TRACK_ACCESS=0
 %post
 export JULIA_DEPOT_PATH="/usr/local/julia/local/share/julia:$JULIA_DEPOT_PATH"
 export JULIA_CPU_TARGET="generic;skylake-avx512,clone_all;znver2,clone_all"
-micromamba run --name base scif install /collabtainer.scif && rm -rf /run/secrets
-rm -f /collabtainer.scif
+micromamba run --name base scif install /recipe.scif && rm -rf /run/secrets
+rm -f /recipe.scif
 
 
 %runscript

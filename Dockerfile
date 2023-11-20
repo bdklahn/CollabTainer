@@ -1,7 +1,7 @@
 FROM ghcr.io/bdklahn/jumambar:0.4.0
 ARG GITHUB_TOKEN
 
-COPY collabtainer.scif /
+COPY recipe.scif /
 COPY scif /scif/
 
 ENV JULIA_DEPOT_PATH="/usr/local/julia/local/share/julia:$JULIA_DEPOT_PATH"
@@ -12,7 +12,7 @@ RUN mkdir -p /run/secrets
 
 RUN --mount=type=secret,id=github_token \
     [ -s /run/secrets/github_token ] || echo $GITHUB_TOKEN > /run/secrets/github_token && \
-    micromamba run --name base scif install /collabtainer.scif && rm -f collabtainer.scif
+    micromamba run --name base scif install /recipe.scif && rm -f recipe.scif
 
 RUN rm -rf /run/secrets || true
 

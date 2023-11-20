@@ -9,8 +9,7 @@ with Julia, Micromamba, and R.
 
 ## Quick Start
 Click "Use this template", above, to create your own repository based on this working example.
-You can explore this code, and maybe try it out after building a local [Apptainer](https://apptainer.org/docs/user/latest/quick_start.html) image. But then you'll want to remove the directories under [scif/apps](scif/apps) and 
-collabtainer.scif and create your own .scif recipe file. Don't forget to update the [.github/workflows/build_docker.yml](.github/workflows/build_docker.yml) file to add your own container location and name.
+You can explore this code, and maybe try it out after building a local [Apptainer](https://apptainer.org/docs/user/latest/quick_start.html) image. But then you'll want to remove the directories under [scif/apps](scif/apps) and edit [recipe.scif](recipe.scif) to serve your purposes. Don't forget to update the [.github/workflows/build_docker.yml](.github/workflows/build_docker.yml) file to add your own container location and name.
 
 
 ## [Scientific Filesystem](https://sci-f.github.io) (SCIF)
