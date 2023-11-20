@@ -161,3 +161,7 @@ cython_debug/
 
 # Apptainer (Singularity)
 *.sif
+
+# Except scif dir
+!/scif/apps/*/lib
+!/scif/apps/*/bin
