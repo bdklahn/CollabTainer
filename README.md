@@ -21,7 +21,7 @@ a `/scif` directory in the created container. There is also a [scif](scif) direc
 this repository. That is only to contain as-needed files which we might want to copy over
 to app-specific locations. But this is _not_ meant to contain all the files and directories
 to instantiate the full scif directory structure. The scif tool will do that, based on the
-[scif recipe file](collabtainer.scif). The repo's scif directory is a good place to keep small
+[scif recipe file](recipe.scif). The repo's scif directory is a good place to keep small
 app config files, like Conda `enviroment.yml` files or Julia `Project.toml` files. But it is encouraged
 to pull in as many things via reliable reference. E.g. (shallow) clone a Github repo into an app's
 lib directory, via `%appinstall` sections in the recipe file.
