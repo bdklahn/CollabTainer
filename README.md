@@ -17,11 +17,11 @@ You can explore this code, and maybe try it out after building a local [Apptaine
 ## [Scientific Filesystem](https://sci-f.github.io) (SCIF)
 (Vanessa Sochat; The Scientific Filesystem (SCIF), GigaScience, giy023, https://doi.org/10.1093/gigascience/giy023)
 
-This container leverages SCIF. The [scif](https://pypi.org/project/scif/) tool is used
+This container leverages SCIF. The [scif tool](https://pypi.org/project/scif/) is used
 to install and utilze apps under a simple, standard directory structure, under
-a `/scif` directory in the created container. There is also a [scif](scif) directory in
+a `/scif` directory in the created container. There is also a [scif directory](scif) in
 this repository. That is only to contain as-needed files which we might want to copy over
-to app-specific locations. But this is _not_ meant to contain all the files and directories
+to app-specific locations. But this is **not** meant to contain all the files and directories
 to instantiate the full scif directory structure. The scif tool will do that, based on the
 [scif recipe file](recipe.scif). The repo's scif directory is a good place to keep small
 app config files, like Conda `enviroment.yml` files or Julia `Project.toml` files. But it is encouraged
