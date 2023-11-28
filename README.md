@@ -7,12 +7,21 @@ might be installed with a separate set of dependency versions, using Conda or Ju
 Project environments. This particular container bootstraps a container provisioned
 with Julia, Micromamba, and R.
 
-## Quick Start
+## Create Your Own Container
 Click "Use this template", above, to create your own repository based on this working example.
 You can explore this code, and maybe try it out after building a local [Apptainer](https://apptainer.org/docs/user/latest/quick_start.html) image. But then you'll want to remove the directories under [scif/apps](scif/apps) and edit [recipe.scif](recipe.scif) to serve your purposes. Don't forget to update the [.github/workflows/build_docker.yml](.github/workflows/build_docker.yml) file to add your own container location and name. That will trigger when you push a tag of the form "vx.x.x" (semantic versioning pattern). You'll need to create and set some repository secrets before that will work, though.
 (https://github.com/settings/tokens)
 (https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository)
 
+
+## Contribute to a Container
+First, make sure your software . . .
+- has a basic input/output interface, to control what input(s) it needs and where it should send any output
+- has some specification for it's top-level dependencies (e.g [enviroment.yml](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually), [requirements.in](https://github.com/jazzband/pip-tools/blob/main/examples/django.in), etc.)
+
+If it's just scripts, edit the app's `%appinstall` section of the [scif recipe file](recipe.scif) to clone
+the code into the app's `lib` directory. Install any files which can be called as exectuables into the app's
+`bin` directory. 
 
 ## [Scientific Filesystem](https://sci-f.github.io) (SCIF)
 (Vanessa Sochat; The Scientific Filesystem (SCIF), GigaScience, giy023, https://doi.org/10.1093/gigascience/giy023)
