@@ -32,7 +32,7 @@ Rscript install_packages.R
 
 %apprun r_epinow2
 # create directories if data dir is mounted in over the container's
-mkdir -p $SCIF_APPDATA
+mkdir -p $SCIF_APPDATA/{input,output}
 CMD="Rscript lib/show_packages.R"
 echo running $CMD
 exec $CMD
