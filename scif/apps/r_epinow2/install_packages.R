@@ -1,11 +1,11 @@
-packages <- c(
+install.packages(c(
+    "argparser",
     "dplyr",
     "EpiNow2",
     "forcats",
     "imputeTS",
     "lubridate",
     "tidyr",
+    "tidyverse",
     "zoo"
-)
-
-install.packages(packages)
+))
